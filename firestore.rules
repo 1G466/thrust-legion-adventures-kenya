@@ -1,0 +1,25 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isAdmin() {
+      return request.auth != null
+        && request.auth.token.phone_number in ['+254700659586', '+254790840890'];
+    }
+
+    match /activities/{activityId} {
+      allow read: if true;
+      allow create: if isAdmin()
+        && request.resource.data.keys().hasAll(['title', 'location', 'description', 'createdAt'])
+        && request.resource.data.title is string
+        && request.resource.data.title.size() <= 90
+        && request.resource.data.description is string
+        && request.resource.data.description.size() <= 500;
+      allow update: if isAdmin()
+        && request.resource.data.title is string
+        && request.resource.data.title.size() <= 90
+        && request.resource.data.description is string
+        && request.resource.data.description.size() <= 500;
+      allow delete: if isAdmin();
+    }
+  }
+}

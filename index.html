@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102b25">
+  <meta name="description" content="Discover unforgettable outdoor adventures and activities across Kenya with Thrust Legion Adventures Kenya.">
+  <title>Thrust Legion Adventures Kenya | Find Your Wild</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Thrust Legion Adventures Kenya home">
+      <span class="brand-mark" aria-hidden="true">T<span>L</span></span>
+      <span class="brand-name">THRUST LEGION <small>ADVENTURES KENYA</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#activities">Activities</a><a href="#about">About us</a><a href="#contact">Contact</a>
+    </nav>
+    <a class="button button-small button-outline" href="#activities">Explore Kenya <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-image" role="img" aria-label="Hikers enjoying a mountain landscape in Kenya"></div>
+      <div class="hero-shade"></div>
+      <div class="hero-content wrap">
+        <p class="eyebrow light"><span></span> YOUR NEXT STORY STARTS HERE</p>
+        <h1>Find your wild.<br><em>Feel alive.</em></h1>
+        <p class="hero-copy">Big skies, new trails, and the kind of moments that stay with you. Discover adventures across Kenya with us.</p>
+        <a class="button button-primary" href="#activities">Discover activities <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="hero-note"><span>01 / 03</span><span class="note-line"></span><span>MADE FOR THE MOMENT</span></div>
+      <div class="hero-stamp" aria-hidden="true">GO<br>BEYOND<br><b>ORDINARY</b></div>
+    </section>
+
+    <section class="intro wrap" id="about">
+      <div class="intro-label"><span class="eyebrow">THRUST LEGION ADVENTURES KENYA</span><span class="tiny-rule"></span></div>
+      <div class="intro-main"><h2>Kenya is calling.<br><em>Let’s answer.</em></h2><p>We bring people together through unforgettable outdoor experiences. From a day out with friends to your next big adventure, there’s more to explore just around the corner.</p></div>
+      <div class="intro-number"><strong>01</strong><span>MAKE IT<br>AN ADVENTURE</span></div>
+    </section>
+
+    <section class="activities-section" id="activities">
+      <div class="wrap">
+        <div class="section-heading"><div><p class="eyebrow"><span class="green-dot"></span> OUT THERE, WAITING</p><h2>Choose your <em>adventure.</em></h2></div><p class="section-description">Find your next reason to get outside. Reach out to our team to ask about dates, availability, and booking.</p></div>
+        <div id="status-message" class="status-message" role="status" hidden></div>
+        <div id="activity-grid" class="activity-grid" aria-live="polite"></div>
+        <div id="empty-state" class="empty-state" hidden><span>✳</span><h3>New adventures are on the way.</h3><p>Check back soon or message us to plan your next outing.</p></div>
+      </div>
+    </section>
+
+    <section class="banner">
+      <div class="banner-image" role="img" aria-label="Kenyan wilderness at sunset"></div><div class="banner-overlay"></div>
+      <div class="banner-content wrap"><p class="eyebrow light">GO WITH YOUR PEOPLE</p><h2>Good days.<br><em>Great stories.</em></h2><a class="button button-primary" href="#contact">Let’s plan something <span aria-hidden="true">↗</span></a></div>
+    </section>
+
+    <section class="contact wrap" id="contact">
+      <div><p class="eyebrow"><span class="green-dot"></span> LET’S GET YOU OUT THERE</p><h2>Have a question?<br><em>Talk to our team.</em></h2><p class="contact-copy">Send us a WhatsApp message about an activity, group outing, or an idea you have in mind.</p></div>
+      <div class="contact-cards">
+        <a class="contact-card" href="https://wa.me/254700659586" target="_blank" rel="noopener noreferrer"><span class="whatsapp-icon" aria-hidden="true">↗</span><span><small>WHATSAPP</small><strong>+254 700 659 586</strong></span><span class="arrow">↗</span></a>
+        <a class="contact-card" href="https://wa.me/254790840890" target="_blank" rel="noopener noreferrer"><span class="whatsapp-icon" aria-hidden="true">↗</span><span><small>WHATSAPP</small><strong>+254 790 840 890</strong></span><span class="arrow">↗</span></a>
+        <a class="email-link" href="mailto:thrustlegionadventureske@gmail.com">thrustlegionadventureske@gmail.com</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><a class="brand footer-brand" href="#home"><span class="brand-mark" aria-hidden="true">T<span>L</span></span><span class="brand-name">THRUST LEGION <small>ADVENTURES KENYA</small></span></a><span>Adventure is better together.</span><span>© <span id="year"></span> Thrust Legion Adventures Kenya</span></footer>
+
+  <button class="admin-trigger" id="admin-open" type="button" aria-label="Open activity manager">Admin</button>
+  <dialog class="admin-dialog" id="admin-dialog" aria-labelledby="admin-title">
+    <div class="admin-panel">
+      <button class="dialog-close" id="admin-close" type="button" aria-label="Close">×</button>
+      <p class="eyebrow"><span class="green-dot"></span> TEAM ACCESS</p><h2 id="admin-title">Activity <em>manager.</em></h2>
+      <div id="admin-config-note" class="notice" hidden>Admin sign-in is not configured yet. Follow the setup steps in the repository README to connect Firebase.</div>
+      <form id="login-form" class="admin-form">
+        <label for="phone-number">Admin phone number</label><input id="phone-number" name="phone" type="tel" autocomplete="tel" placeholder="+254 700 000 000" required>
+        <div id="recaptcha-container"></div><button class="button button-dark" type="submit">Send verification code <span>→</span></button>
+      </form>
+      <form id="code-form" class="admin-form" hidden>
+        <label for="verification-code">Verification code</label><input id="verification-code" name="code" inputmode="numeric" autocomplete="one-time-code" placeholder="123456" required>
+        <button class="button button-dark" type="submit">Verify and continue <span>→</span></button>
+      </form>
+      <p id="admin-message" class="form-message" role="status"></p>
+      <section id="editor" hidden>
+        <div class="editor-top"><p id="signed-in-as"></p><button class="text-button" id="sign-out" type="button">Sign out</button></div>
+        <form id="activity-form" class="admin-form">
+          <input id="activity-id" type="hidden">
+          <label for="activity-title">Activity name</label><input id="activity-title" maxlength="90" required placeholder="e.g. Ngong Hills sunrise hike">
+          <div class="form-row"><div><label for="activity-location">Location</label><input id="activity-location" maxlength="80" required placeholder="Ngong Hills, Kenya"></div><div><label for="activity-date">Date or schedule</label><input id="activity-date" maxlength="60" placeholder="Ask us for upcoming dates"></div></div>
+          <div class="form-row"><div><label for="activity-price">Price (optional)</label><input id="activity-price" maxlength="40" placeholder="e.g. From KSh 2,500"></div><div><label for="activity-tag">Category</label><input id="activity-tag" maxlength="30" placeholder="Hiking"></div></div>
+          <label for="activity-image">Image URL (optional)</label><input id="activity-image" type="url" placeholder="https://…">
+          <label for="activity-description">Description</label><textarea id="activity-description" maxlength="500" rows="3" required placeholder="Tell people what makes this activity special."></textarea>
+          <button class="button button-dark" type="submit">Publish activity <span>↗</span></button>
+          <button class="text-button cancel-edit" id="cancel-edit" type="button" hidden>Cancel editing</button>
+        </form>
+        <h3 class="manage-heading">Published activities</h3><div id="manage-list" class="manage-list"></div>
+      </section>
+    </div>
+  </dialog>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
